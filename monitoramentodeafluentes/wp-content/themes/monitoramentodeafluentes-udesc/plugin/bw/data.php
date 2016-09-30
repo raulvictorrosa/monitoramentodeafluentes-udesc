@@ -1,53 +1,78 @@
 <?php
-/*$result = $wpdb->get_results('SELECT idEvento_dad, data, hora, dados, Sensor_codSensor FROM `monitoramentodeafluentes`.`evento_dados` WHERE Sensor_codSensor = "UL0" LIMIT 5;');
-$data = array();
-foreach($result as $row) {
-	$data[] = $row;
-};
-$result->close();
-
-print json_encode($data);*/
-
-//setting header to json
+// setting header to json
 header('Content-Type: application/json');
 
-//database
-define('DB_HOST', '127.0.0.1:3306');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'monitoramentodeafluentes');
+// database
+$host = '127.0.0.1:3306'; 
+$dbname = 'monitoramentodeafluentes';
+$user = 'root';
+$pass = 'root';
 
-//get connection
-$mysqli = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// get connection
+try {
+	$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);  
+	$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
 
-if(!$mysqli){
-	die("Connection failed: " . $mysqli->error);
+	$db = $DBH;
+}
+catch(PDOException $e) {
+	echo 'ERROR: ' . $e->getMessage();
+	die();
 }
 
-//query to get data from the table
-$query = sprintf('SELECT idEvento_dad, data, hora, dados, Sensor_codSensor FROM `monitoramentodeafluentes`.`evento_dados` WHERE Sensor_codSensor = "UL0" ORDER BY data, hora #LIMIT 20');
+// query to get data from the table
+$sql = 'SELECT idEvento_dad, data, hora, dados, Sensor_codSensor FROM `monitoramentodeafluentes`.`evento_dados` WHERE Sensor_codSensor = "UL0" ORDER BY data, hora #LIMIT 20';
+$STH = $db->prepare($sql);
 
 //execute query
-$result = $mysqli->query($query);
+$STH->execute();
+$STH->setFetchMode(PDO::FETCH_ASSOC);
 
 //loop through the returned data
 $data = array();
-if (is_array($result) || is_object($result)) {
-  foreach($result as $row) {
+if (is_array($STH) || is_object($STH)) {
+  foreach($STH as $row) {
 		$data[] = $row;
 	}
 }
-/*foreach($result as $row) {
-	$data[] = $row;
-}*/
-
-//free memory associated with result
-if ($result) {
-	$result->close();
-}
-
-//close connection
-$mysqli->close();
 
 //now print the data
 print json_encode($data);
+
+
+
+
+
+
+
+// class DBConnection {
+// 	function DBConnection() {
+//     $host = '127.0.0.1:3306'; 
+//     $dbname = 'monitoramentodeafluentes';
+//     $user = 'root';
+//     $pass = 'root';
+
+//     try {
+// 			$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);  
+// 			$DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );  
+
+// 			return $DBH;
+//     }
+//     catch(PDOException $e) {
+// 			echo 'ERROR: ' . $e->getMessage();
+//     }
+// 	}
+// }
+
+// function get_all() {
+// 	$db = new DBConnection();
+
+// 	$sql = 'SELECT idEvento_dad, data, hora, dados, Sensor_codSensor FROM `monitoramentodeafluentes`.`evento_dados` WHERE Sensor_codSensor = "UL0" ORDER BY data, hora #LIMIT 20';
+// 	$STH = $db->prepare($sql);
+// 	$STH->execute();
+// 	$STH->setFetchMode(PDO::FETCH_ASSOC);
+
+// 	return $STH;
+// }
+
+// echo get_all();
