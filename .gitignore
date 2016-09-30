@@ -1,0 +1,73 @@
+# https://git-scm.com/docs/gitignore
+# https://help.github.com/articles/ignoring-files
+# Example .gitignore files: https://github.com/github/gitignore
+
+*.log
+*.phar
+.DS_Store
+.ftpquota
+.sass-cache
+bower_components/
+node_modules/
+vendor/
+composer.lock
+sitemap.xml
+sitemap.xml.gz
+
+# Wordpress folders ignored, that never need to be changed and ever that install NPM in this project these folders and archives will be downloads.
+sistema/wp-admin/
+sistema/wp-content/languages/
+
+# Some most used plugins. If necessary, unlock the folder and activate the plugins that you want to commit.
+# sistema/wp-content/plugins/
+sistema/wp-content/plugins/ajax-load-more/
+sistema/wp-content/plugins/akismet/
+sistema/wp-content/plugins/acf-repeater/
+sistema/wp-content/plugins/advanced-custom-fields/
+sistema/wp-content/plugins/apppresser/
+sistema/wp-content/plugins/block-bad-queries/
+sistema/wp-content/plugins/contact-form-7/
+sistema/wp-content/plugins/duplicate-post/
+sistema/wp-content/plugins/jetpack/
+sistema/wp-content/plugins/mapsvg/
+sistema/wp-content/plugins/members/
+sistema/wp-content/plugins/ml-slider/
+sistema/wp-content/plugins/new-royalslider/
+sistema/wp-content/plugins/real3d-flipbook/
+sistema/wp-content/plugins/remove-category-url/
+sistema/wp-content/plugins/rocket-maintenance-mode/
+sistema/wp-content/plugins/rtler/
+sistema/wp-content/plugins/simple-fields/
+sistema/wp-content/plugins/theme-check/
+sistema/wp-content/plugins/ultimate-security-checker/
+sistema/wp-content/plugins/ultimate-tag-cloud-widget/
+sistema/wp-content/plugins/wp-mail-smtp/
+sistema/wp-content/plugins/wp-migrate-db/
+sistema/wp-content/plugins/wp-pagenavi/
+sistema/wp-content/plugins/wp-polls/
+sistema/wp-content/plugins/hello.php
+sistema/wp-content/plugins/index.php
+
+sistema/wp-content/themes/twenty*/
+sistema/wp-content/themes/index.php
+sistema/wp-content/uploads/
+sistema/wp-content/index.php
+sistema/wp-includes/
+sistema/.htaccess
+sistema/index.php
+sistema/license.txt
+sistema/readme.html
+sistema/wp-activate.php
+sistema/wp-blog-header.php
+sistema/wp-comments-post.php
+sistema/wp-config.php
+sistema/wp-config-sample.php
+sistema/wp-cron.php
+sistema/wp-links-opml.php
+sistema/wp-load.php
+sistema/wp-login.php
+sistema/wp-mail.php
+sistema/wp-settings.php
+sistema/wp-signup.php
+sistema/wp-trackback.php
+sistema/xmlrpc.php
