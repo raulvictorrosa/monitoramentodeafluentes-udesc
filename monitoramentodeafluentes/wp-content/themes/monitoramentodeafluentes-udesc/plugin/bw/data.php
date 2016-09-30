@@ -34,7 +34,7 @@ $result = $mysqli->query($query);
 $data = array();
 if (is_array($result) || is_object($result)) {
   foreach($result as $row) {
-		$data[] = $row;teste
+		$data[] = $row;
 	}
 }
 /*foreach($result as $row) {
