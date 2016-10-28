@@ -102,18 +102,27 @@ add_action( 'widgets_init', 'monitoramentodeafluentes_udesc_widgets_init' );
  * Enqueue scripts and styles.
  */
 function monitoramentodeafluentes_udesc_scripts() {
-	//wp_register_style( 'bxslider-css', get_template_directory_uri().'/modules/jquery-bxslider/jquery.bxslider.css');
+	// wp_register_style( 'bxslider-css', get_template_directory_uri().'/modules/jquery-bxslider/jquery.bxslider.css');
 
 	// monitoramentodeafluentes-udesc-style that contains the main style, Bootstrap core CSS,
-	wp_enqueue_style( 'monitoramentodeafluentes-udesc-style', get_stylesheet_uri(), array() );
+	wp_enqueue_style('monitoramentodeafluentes-udesc-style', get_stylesheet_uri(), array());
 
-	wp_enqueue_script('jquery-min', get_stylesheet_directory_uri().'/js/jquery/jquery.min.js', array(), false, true);
+	wp_enqueue_script('jquery-min', get_stylesheet_directory_uri().'/assets/js/jquery/jquery.min.js', array(), false, true);
 
-	wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri().'/js/bootstrap-js/bootstrap.min.js', array(), false, true);
+	wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri().'/assets/js/bootstrap-js/bootstrap.min.js', array(), false, true);
 
-	wp_enqueue_script( 'monitoramentodeafluentes-udesc-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	// IE10 viewport hack for Surface/desktop Windows 8 bug
+	wp_enqueue_script('ie10-viewport-bug-workaround', get_stylesheet_directory_uri().'/assets/js/ie10-viewport-bug-workaround.js', array(), false, true);
+	
+	wp_enqueue_script('monitoramentodeafluentes-udesc-functions', get_stylesheet_directory_uri().'/assets/js/function.js', array(), false, true);
 
-	wp_enqueue_script( 'monitoramentodeafluentes-udesc-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script('monitoramentodeafluentes-udesc-navigation', get_template_directory_uri().'/assets/js/navigation.js', array(), '20151215', true);
+
+	wp_enqueue_script('monitoramentodeafluentes-udesc-skip-link-focus-fix', get_template_directory_uri().'/assets/js/skip-link-focus-fix.js', array(), '20151215', true);
+
+	wp_enqueue_script('canvasjs', get_template_directory_uri().'/assets/js/canvasjs.min.js', array(), false, true);
+
+	// wp_enqueue_script('profundidade-canvasjs', get_template_directory_uri().'/assets/js/profundidade-canvasjs.php.js', array(), false, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
