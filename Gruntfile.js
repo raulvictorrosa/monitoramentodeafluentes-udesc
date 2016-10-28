@@ -89,28 +89,28 @@ module.exports = function(grunt) {
             expand: true,
             cwd: '<%= dir.bower %>bootstrap-sass/assets/stylesheets/',
             src: ['**/*.scss'],
-            dest: '<%= dir.theme %>sass/bootstrap-sass/'
+            dest: '<%= dir.theme %>assets/sass/bootstrap-sass/'
           },
           {
             // Copia os arquivos para fonte do bootstrap
             expand: true,
             cwd: '<%= dir.bower %>bootstrap-sass/assets/fonts/bootstrap/',
             src: ['**/*'],
-            dest: '<%= dir.theme %>fonts/bootstrap-fonts/'
+            dest: '<%= dir.theme %>assets/fonts/bootstrap-fonts/'
           },
           {
             // Copia os arquivos para javascripts do bootstrap
             expand: true,
             cwd: '<%= dir.bower %>bootstrap-sass/assets/javascripts/',
             src: ['**/*'],
-            dest: '<%= dir.theme %>js/bootstrap-js/'
+            dest: '<%= dir.theme %>assets/js/bootstrap-js/'
           },
           {
             // Copia os arquivos jquery
             expand: true,
             cwd: '<%= dir.bower %>jquery/dist/',
             src: ['*'],
-            dest: '<%= dir.theme %>js/jquery/'
+            dest: '<%= dir.theme %>assets/js/jquery/'
           }
         ]
       }
@@ -127,8 +127,8 @@ module.exports = function(grunt) {
           // and save one more time to compile, this attribute will minified the style.
         },
         files: {
-          '<%= dir.theme %>style.css': '<%= dir.theme %>sass/style.scss',
-          '<%= dir.theme %>layouts/content-login.css': '<%= dir.theme %>sass/layout/content-login.scss'
+          '<%= dir.theme %>style.css': '<%= dir.theme %>assets/sass/style.scss',
+          '<%= dir.theme %>layouts/content-login.css': '<%= dir.theme %>assets/sass/layout/content-login.scss'
           // 'monitoramentodeafluentes/wp-content/themes/monitoramentodeafluentes-udesc/style.css': 'monitoramentodeafluentes/wp-content/themes/monitoramentodeafluentes-udesc/sass/style.scss',
           // 'monitoramentodeafluentes/wp-content/themes/monitoramentodeafluentes-udesc/layouts/content-login.css': 'monitoramentodeafluentes/wp-content/themes/monitoramentodeafluentes-udesc/sass/layout/content-login.scss',
         }
@@ -198,7 +198,7 @@ module.exports = function(grunt) {
     watch: {
       // Assiste todas as folhas de style para executar a tarefa que compila e que notifica que os arquivos foram alterados
       style: {
-        files: [ '<%= dir.theme %>sass/**/*.scss' ],
+        files: [ '<%= dir.theme %>assets/sass/**/*.scss' ],
         tasks: [ 'style', 'notify:sass' ]
       },
 
