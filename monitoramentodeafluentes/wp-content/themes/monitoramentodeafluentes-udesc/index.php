@@ -13,57 +13,41 @@
  */
 
 get_header(); ?>
-<?php
-/*$result = $wpdb->get_results('SELECT idEvento_dad, data, hora, dados, Sensor_codSensor FROM `monitoramentodeafluentes`.`evento_dados` WHERE Sensor_codSensor = "UL0" LIMIT 5;');
-$data = array();
-foreach($result as $row) {
-	$data[] = $row;
-};
-
-print json_encode($data)."<br><br><br>";*/
-?>
 <div class="container">
-	<div id="header">
-		<h2>Umidade</h2>
+  <!-- <div class="starter-template">
+    <h1>Home</h1>
+    <p class="lead">
+      Use this document as a way to quickly start any new project.<br>
+      All you get is this text and a mostly barebones HTML document.
+    </p>
+  </div> -->
+  <div class="row">
+		<div class="col-sm-12">
+			<h1 style="text-align: center;">Profundidade</h1>
+			<div id="chartProfundidade" style="height: 400px;"></div>
+			<table class="table table-striped table-bordered" style="display: none;width:auto;left: 50%;position: relative;transform: translateX(-50%);">
+				<tr>
+					<td>Id Evento</td>
+					<td>Data</td>
+					<td>Hora</td>
+					<td>Dado</td>
+					<td>Código do Sensor</td>
+				</tr>
+		  	<?php
+		  	$resultados = $wpdb->get_results('SELECT idEvento_dad, data, hora, dados, Sensor_codSensor FROM `monitoramentodeafluentes`.`evento_dados` WHERE Sensor_codSensor = "UL0" ORDER BY idEvento_dad LIMIT 5');
+		  	foreach($resultados as $resultado) {
+					echo "<tr>";
+					echo "<td>{$resultado->idEvento_dad}</td>";
+					echo "<td>{$resultado->data}</td>";
+					echo "<td>{$resultado->hora}</td>";
+					echo "<td>{$resultado->dados}</td>";
+					echo "<td>{$resultado->Sensor_codSensor}</td>";
+					echo "</tr>";
+				};
+				?>
+			</table>
+		</div>
 	</div>
-	<div class="demo-container">
-		<div id="placeholder" class="demo-placeholder"></div>
-	</div>
-	<p class="message"></p>
-	<p>
-		<label>Ponto clicado: </label>
-		<span id="hoverdata"></span>
-		<span id="clickdata"></span>
-	</p>
-	<p>Time between updates: <input id="updateInterval" type="text" value="" style="text-align: right; width:5em"> milliseconds</p>
-</div>
-
-<div class="container">
-	<table class="table table-striped table-bordered" style="width:auto;left: 50%;position: relative;transform: translateX(-50%);">
-		<tr>
-			<td>Id Evento</td>
-			<td>Data</td>
-			<td>Hora</td>
-			<td>Dado</td>
-			<td>Código do Sensor</td>
-		</tr>
-  	<?php
-  	$resultados = $wpdb->get_results('SELECT idEvento_dad, data, hora, dados, Sensor_codSensor FROM `monitoramentodeafluentes`.`evento_dados` WHERE Sensor_codSensor = "UL0" ORDER BY idEvento_dad LIMIT 5');
-  	foreach($resultados as $resultado) {
-			echo "<tr>";
-			echo "<td>{$resultado->idEvento_dad}</td>";
-			echo "<td>{$resultado->data}</td>";
-			echo "<td>{$resultado->hora}</td>";
-			echo "<td>{$resultado->dados}</td>";
-			echo "<td>{$resultado->Sensor_codSensor}</td>";
-			echo "</tr>";
-		};
-		?>
-	</table>
-  <div class="starter-template">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-  </div>
 </div><!-- /.container -->
 <?php
 //get_sidebar();
