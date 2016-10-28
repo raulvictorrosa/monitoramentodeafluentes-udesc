@@ -1,0 +1,24 @@
+body {
+  padding-top: 70px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+.cabecalho .brand-logo {
+  align-items: center;
+	display: flex;
+	height: 70px;
+}
+.cabecalho .brand-logo img {
+	float: left;
+	height: 40px;
+	padding-right: 10px;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav>li>a {
+    padding-top: 25px;
+    padding-bottom: 25px;
+	}	
+}

@@ -25,28 +25,29 @@ $(function () {
   function List() {
     $("#tblList").html("");
     $("#tblList").html(
-            "<thead>" +
-            "<tr>" +                
-            "<th>ID</th>" +
-            "<th>Nombre</th>" +
-            "<th>Teléfono</th>" +
-            "<th>Email</th>" +
-            "<th>Acciones</th>" +
-            "</tr>" +
-            "</thead>" +
-            "<tbody>" +
-            "</tbody>"
-            ); //Agregar la tabla a la estructura HTML
+      "<thead>" +
+      "<tr>" +                
+      "<th>ID</th>" +
+      "<th>Nombre</th>" +
+      "<th>Teléfono</th>" +
+      "<th>Email</th>" +
+      "<th>Acciones</th>" +
+      "</tr>" +
+      "</thead>" +
+      "<tbody>" +
+      "</tbody>"
+    ); //Agregar la tabla a la estructura HTML
     for (var i in tblPersons) {
-        var per = JSON.parse(tblPersons[i]);
-        $("#tblList tbody").append("<tr>" +                    
-                "<td>" + per.ID + "</td>" +
-                "<td>" + per.Name + "</td>" +
-                "<td>" + per.Phone + "</td>" +
-                "<td>" + per.Email + "</td>" +                    
-                "<td><img src='edit.png' alt='Edit" + i + "' class='btnEdit'/>&nbsp &nbsp<img src='delete.png' alt='Delete" + i + "' class='btnDelete'/></td>" +
-                "</tr>"
-                );
+      var per = JSON.parse(tblPersons[i]);
+      $("#tblList tbody").append(
+        "<tr>" +                    
+        "<td>" + per.ID + "</td>" +
+        "<td>" + per.Name + "</td>" +
+        "<td>" + per.Phone + "</td>" +
+        "<td>" + per.Email + "</td>" +                    
+        "<td><img src='edit.png' alt='Edit" + i + "' class='btnEdit'/>&nbsp &nbsp<img src='delete.png' alt='Delete" + i + "' class='btnDelete'/></td>" +
+        "</tr>"
+      );
     } //Recorrer y agregar los items a la tabla HTML
   }
   
