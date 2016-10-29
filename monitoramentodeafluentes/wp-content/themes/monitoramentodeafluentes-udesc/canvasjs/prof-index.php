@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-12">
       <?php
-      include 'select-data-prof.php';
+      include 'prof-select-data.php';
 
       $dataPoints = array();
       if (is_array($data) || is_object($data)) {
@@ -22,9 +22,7 @@
       <div id="chartContainer" style="height: 400px;"></div>
 
       <?php
-      // echo '<pre style="margin-top: 450px">';
       // var_dump($dataPoints);
-      // echo '</pre>';
       // echo json_encode($dataPoints, JSON_NUMERIC_CHECK);
       ?>
 
@@ -32,7 +30,7 @@
       window.onload = function () {
         var dataPoints = <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>;
 
-        var chart = new CanvasJS.Chart("chartContainer", {
+        var chartProf = new CanvasJS.Chart("chartContainer", {
           // title: {text: "Profundidade"},
           // animationEnabled: true,
           zoomEnabled: true,
@@ -66,7 +64,7 @@
           }]
         });
 
-        chart.render();
+        chartProf.render();
 
         var updateInterval = 1000;
         var dataLength = 10; // number of dataPoints visible at any point
@@ -75,7 +73,7 @@
         function loadJSON(callback) {   
           var xobj = new XMLHttpRequest();
           xobj.overrideMimeType("application/json");
-          xobj.open('GET', 'data-json-prof.php', true); // Replace 'my_data' with the path to your file
+          xobj.open('GET', 'prof-data-json.php', true); // Replace 'my_data' with the path to your file
           xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
               // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -102,7 +100,7 @@
             // console.log({"x" : parseInt(aux['x']), "y" : parseFloat(aux['y'])});
           });
 
-          chart.render();
+          chartProf.render();
         };
         setInterval(function () { updateChart() }, updateInterval);
       }
@@ -110,5 +108,4 @@
     </div>
   </div>
 </div>
-
 <?php include 'footer.php'; ?>
