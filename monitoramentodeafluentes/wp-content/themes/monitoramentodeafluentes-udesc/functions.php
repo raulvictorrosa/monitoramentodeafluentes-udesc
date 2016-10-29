@@ -44,7 +44,7 @@ function monitoramentodeafluentes_udesc_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'monitoramentodeafluentes-udesc' ),
+		'primary' => esc_html__( 'Menu Principal', 'monitoramentodeafluentes-udesc' ),
 	) );
 
 	/*
@@ -110,6 +110,8 @@ function monitoramentodeafluentes_udesc_scripts() {
 	wp_enqueue_script('jquery-min', get_stylesheet_directory_uri().'/assets/js/jquery/jquery.min.js', array(), false, true);
 
 	wp_enqueue_script('bootstrap-js', get_stylesheet_directory_uri().'/assets/js/bootstrap-js/bootstrap.min.js', array(), false, true);
+	
+	wp_enqueue_script('menu-principal-js', get_template_directory_uri().'/assets/js/menu-principal.js', array(), false, true);
 
 	// IE10 viewport hack for Surface/desktop Windows 8 bug
 	wp_enqueue_script('ie10-viewport-bug-workaround', get_stylesheet_directory_uri().'/assets/js/ie10-viewport-bug-workaround.js', array(), false, true);
@@ -121,8 +123,6 @@ function monitoramentodeafluentes_udesc_scripts() {
 	wp_enqueue_script('monitoramentodeafluentes-udesc-skip-link-focus-fix', get_template_directory_uri().'/assets/js/skip-link-focus-fix.js', array(), '20151215', true);
 
 	wp_enqueue_script('canvasjs', get_template_directory_uri().'/assets/js/canvasjs.min.js', array(), false, true);
-
-	// wp_enqueue_script('profundidade-canvasjs', get_template_directory_uri().'/assets/js/profundidade-canvasjs.php.js', array(), false, true);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

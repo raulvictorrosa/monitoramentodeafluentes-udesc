@@ -54,7 +54,17 @@
           	<?php echo get_bloginfo(); ?>
         	</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+
+        <?php
+          wp_nav_menu(
+            array(
+              'theme_location'  => 'primary',
+              'container_class' => 'primary-menu'
+            )
+          );
+        ?>
+
+        <div id="navbar" class="collapse navbar-collapse" style="display: none !important;">
           <ul class="nav navbar-nav">
             <li class="active"><a href="<?php echo get_site_url(); ?>">Home</a></li>
             <li><a href="<?php echo get_site_url(); ?>/profundidade">Profundidade</a></li>
