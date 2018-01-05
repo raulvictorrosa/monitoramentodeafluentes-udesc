@@ -1,0 +1,32 @@
+{
+  "name": "monitoramentodeafluentes",
+  "version": "1.0.0",
+  "description": "Sistema para Monitoramento de nível de rio utilizando microcomputador, sensor ultrassônico e comunicação celular.",
+  "authors": [
+    "Raul Victor Rosa <raulvictorrosa@gmail.com>"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "sitema",
+    "Monitoramento",
+    "rios",
+    "rio",
+    "microcomputador",
+    "sensor",
+    "ultrassonico",
+    "comunicação",
+    "celular"
+  ],
+  "moduleType": [],
+  "homepage": "https://bitbucket.org/udesc/monitoramentodeafluentes#readme",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

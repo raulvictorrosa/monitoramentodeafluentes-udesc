@@ -1,0 +1,73 @@
+# https://git-scm.com/docs/gitignore
+# https://help.github.com/articles/ignoring-files
+# Example .gitignore files: https://github.com/github/gitignore
+
+*.log
+*.phar
+.DS_Store
+.ftpquota
+.sass-cache
+bower_components/
+node_modules/
+vendor/
+composer.lock
+sitemap.xml
+sitemap.xml.gz
+
+# Wordpress folders ignored, that never need to be changed and ever that install NPM in this project these folders and archives will be downloads.
+monitoramentodeafluentes/wp-admin/
+monitoramentodeafluentes/wp-content/languages/
+
+# Some most used plugins. If necessary, unlock the folder and activate the plugins that you want to commit.
+# monitoramentodeafluentes/wp-content/plugins/
+monitoramentodeafluentes/wp-content/plugins/ajax-load-more/
+monitoramentodeafluentes/wp-content/plugins/akismet/
+monitoramentodeafluentes/wp-content/plugins/acf-repeater/
+monitoramentodeafluentes/wp-content/plugins/advanced-custom-fields/
+monitoramentodeafluentes/wp-content/plugins/apppresser/
+monitoramentodeafluentes/wp-content/plugins/block-bad-queries/
+monitoramentodeafluentes/wp-content/plugins/contact-form-7/
+monitoramentodeafluentes/wp-content/plugins/duplicate-post/
+monitoramentodeafluentes/wp-content/plugins/jetpack/
+monitoramentodeafluentes/wp-content/plugins/mapsvg/
+monitoramentodeafluentes/wp-content/plugins/members/
+monitoramentodeafluentes/wp-content/plugins/ml-slider/
+monitoramentodeafluentes/wp-content/plugins/new-royalslider/
+monitoramentodeafluentes/wp-content/plugins/real3d-flipbook/
+monitoramentodeafluentes/wp-content/plugins/remove-category-url/
+monitoramentodeafluentes/wp-content/plugins/rocket-maintenance-mode/
+monitoramentodeafluentes/wp-content/plugins/rtler/
+monitoramentodeafluentes/wp-content/plugins/simple-fields/
+monitoramentodeafluentes/wp-content/plugins/theme-check/
+monitoramentodeafluentes/wp-content/plugins/ultimate-security-checker/
+monitoramentodeafluentes/wp-content/plugins/ultimate-tag-cloud-widget/
+monitoramentodeafluentes/wp-content/plugins/wp-mail-smtp/
+monitoramentodeafluentes/wp-content/plugins/wp-migrate-db/
+monitoramentodeafluentes/wp-content/plugins/wp-pagenavi/
+monitoramentodeafluentes/wp-content/plugins/wp-polls/
+monitoramentodeafluentes/wp-content/plugins/hello.php
+monitoramentodeafluentes/wp-content/plugins/index.php
+
+monitoramentodeafluentes/wp-content/themes/twenty*/
+monitoramentodeafluentes/wp-content/themes/index.php
+monitoramentodeafluentes/wp-content/uploads/
+monitoramentodeafluentes/wp-content/index.php
+monitoramentodeafluentes/wp-includes/
+monitoramentodeafluentes/.htaccess
+monitoramentodeafluentes/index.php
+monitoramentodeafluentes/license.txt
+monitoramentodeafluentes/readme.html
+monitoramentodeafluentes/wp-activate.php
+monitoramentodeafluentes/wp-blog-header.php
+monitoramentodeafluentes/wp-comments-post.php
+monitoramentodeafluentes/wp-config.php
+monitoramentodeafluentes/wp-config-sample.php
+monitoramentodeafluentes/wp-cron.php
+monitoramentodeafluentes/wp-links-opml.php
+monitoramentodeafluentes/wp-load.php
+monitoramentodeafluentes/wp-login.php
+monitoramentodeafluentes/wp-mail.php
+monitoramentodeafluentes/wp-settings.php
+monitoramentodeafluentes/wp-signup.php
+monitoramentodeafluentes/wp-trackback.php
+monitoramentodeafluentes/xmlrpc.php
